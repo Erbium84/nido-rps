@@ -1,8 +1,15 @@
-function human(){
-    let s=(prompt("rock, paper, scissor, or stop?"));
-    return s;
-}
 
+let rock=document.querySelector('.rock');
+let scissor=document.querySelector('.scissor');
+let paper=document.querySelector('.paper');
+let computer_played=document.querySelector('.computer-played');
+let human_played=document.querySelector('.human-played');
+
+let x=document.querySelector('.human-score');
+let y=document.querySelector('.computer-score');
+
+x.textContent=0;
+y.textContent=0;
 
 function computer(){
     let n=Math.random();
@@ -22,58 +29,63 @@ function computer(){
     return s;
 }
 
-let humanscore=0, computerscore=0;
+function rps(human_input){
+    let comp_input=computer();
+
+    //showing most recent plays (rock, paper, scissor) on the div
+    computer_played.textContent=comp_input;
+    human_played.textContent=human_input;
 
 
-function rps(){
-    let p=human();
-    let q=computer();
 
-    if(p=="stop"){
-        console.log("human: "+humanscore+" computer: "+computerscore);
-        return;
+    if(human_input=="rock"){
+        
+        if(comp_input=="paper"){
+            let yy=parseInt(y.textContent);
+            yy++;
+            y.textContent=yy;
+        }
+        else if(comp_input=="scissor"){
+            let xx=parseInt(x.textContent);
+            xx++;
+            x.textContent=xx;
+        }
+        
+    }
+    else if(human_input=="paper"){
+        if(comp_input=="rock"){
+            let xx=parseInt(x.textContent);
+            xx++;
+            x.textContent=xx;
+        }
+        else if(comp_input=="scissor"){
+            let yy=parseInt(y.textContent);
+            yy++;
+            y.textContent=yy;
+        }
+    }
+    else if(human_input=="scissor"){
+        if(comp_input=="rock"){
+            let yy=parseInt(y.textContent);
+            yy++;
+            y.textContent=yy;
+        }
+        else if(comp_input=="paper"){
+            let xx=parseInt(x.textContent);
+            xx++;
+            x.textContent=xx;
+        }
     }
 
-    if(p=="rock"){
-        if(q=="rock"){
-            console.log("human: "+humanscore+" computer: "+computerscore);
-        }
-        else if(q=="paper"){
-            computerscore++;
-            console.log("human: "+humanscore+" computer: "+computerscore);
-        }
-        else if(q=="scissor"){
-            humanscore++;
-            console.log("human: "+humanscore+" computer: "+computerscore);
-        }
-    }
-    else if(p=="paper"){
-        if(q=="rock"){
-            humanscore++;
-            console.log("human: "+humanscore+" computer: "+computerscore);
-        }
-        else if(q=="paper"){
-            console.log("human: "+humanscore+" computer: "+computerscore);
-        }
-        else if(q=="scissor"){
-            computerscore++;
-            console.log("human: "+humanscore+" computer: "+computerscore);
-        }
-    }
-    else if(p=="scissor"){
-        if(q=="rock"){
-            computerscore++;
-            console.log("human: "+humanscore+" computer: "+computerscore);
-        }
-        else if(q=="paper"){
-            humanscore++;
-            console.log("human: "+humanscore+" computer: "+computerscore);
-        }
-        else if(q=="scissor"){
-            console.log("human: "+humanscore+" computer: "+computerscore);
-        }
-    }
-    rps();
 }
 
-rps();
+rock.addEventListener('click',() => {
+    rps("rock");
+});
+
+paper.addEventListener('click',() => {
+    rps("paper");
+});
+scissor.addEventListener('click',() => {
+    rps("scissor");
+});
