@@ -1,8 +1,8 @@
-🎮 Rock Paper Scissors — Enhanced UI/UX Edition
+# 🎮 Rock Paper Scissors — Enhanced UI/UX Edition
 
 This is a modern, browser-based implementation of the classic Rock Paper Scissors game, rebuilt with a focus on intuitive UI/UX. Unlike the earlier console-only version that relied on alert boxes and manual inputs, this upgrade introduces interactive buttons, live score tracking, and real-time visual feedback — no alerts, no console required!
 
-✨ Features
+# ✨ Features
 
   🖱️ Clickable buttons for Rock, Paper, and Scissors
 
@@ -14,7 +14,7 @@ This is a modern, browser-based implementation of the classic Rock Paper Scissor
 
   🎨 Clean and responsive layout using CSS
 
-🛠️ Tech Stack
+# 🛠️ Tech Stack
 
   HTML5 – Structure
 
@@ -22,7 +22,7 @@ This is a modern, browser-based implementation of the classic Rock Paper Scissor
 
   JavaScript (Vanilla) – Game logic & interactivity
 
-🚀 How to Play
+# 🚀 How to Play
 
   Just open the live link : https://erbium84.github.io/nido-rps/
 
